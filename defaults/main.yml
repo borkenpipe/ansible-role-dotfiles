@@ -20,4 +20,6 @@ dotfiles_files:
   - .screenrc
   - .subversion_config
   - .tmux.conf
+  - .tmux.conf.extra
   - .vimrc
+  - .is_ssh.sh
