@@ -23,3 +23,12 @@ dotfiles_files:
   - .tmux.conf.extra
   - .vimrc
   - .is_ssh.sh
+
+bashparts_repo: "https://github.com/borkenpipe/bashparts.git"
+bashparts_repo_version: master
+bashparts_repo_accept_hostkey: false
+bashparts_repo_local_destination: "~/bashparts"
+
+bashparts_home: "~"
+bashparts_files:
+  - vars.sh
