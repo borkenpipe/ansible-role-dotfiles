@@ -29,3 +29,10 @@
     state: link
   become: false
   with_items: "{{ dotfiles_files }}"
+
+- name: ~/etc/
+  file:
+    path: "{{ dotfiles_home }}/{{ etc_files }}"
+    state: directory
+    mode: 0755
+  become: false
