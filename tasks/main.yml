@@ -7,6 +7,13 @@
     accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
   become: false
 
+- name: Ensure that ~/etc/ exists
+  file:
+    path: "{{ dotfiles_home }}/etc/"
+    state: directory
+    mode: 0755
+  become: false
+
 - name: Ensure all configured dotfiles are links.
   command: "ls -F {{ dotfiles_home }}/{{ item }}"
   register: existing_dotfile_info
@@ -30,9 +37,3 @@
   become: false
   with_items: "{{ dotfiles_files }}"
 
-- name: ~/etc/
-  file:
-    path: "{{ dotfiles_home }}/{{ etc_files }}"
-    state: directory
-    mode: 0755
-  become: false
